@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtrqicgh4vcms"]
+
+[ext_resource type="Script" path="res://scenes/game/item.gd" id="1_hrkfc"]
+[ext_resource type="Texture2D" uid="uid://54q1vxcespwu" path="res://assets/sprites/item_hat.png" id="2_0q4lb"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_y3xet"]
+[ext_resource type="Script" path="res://scripts/sprite_render_fix.gd" id="3_aoxnl"]
+[ext_resource type="AudioStream" uid="uid://css1bbfepr87n" path="res://assets/sounds/clothes-drop-2-40202.mp3" id="5_4flfy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mowtn"]
+friction = 0.3
+rough = true
+bounce = 0.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4u3d2"]
+resource_local_to_scene = true
+shader = ExtResource("2_y3xet")
+shader_parameter/width = 1.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/gray = Color(0.741176, 0.741176, 0.741176, 1)
+shader_parameter/white = Color(1, 1, 1, 1)
+shader_parameter/color = Color(0, 1, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bb37h"]
+radius = 6.0
+
+[node name="item" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 23
+physics_material_override = SubResource("PhysicsMaterial_mowtn")
+lock_rotation = true
+continuous_cd = 2
+script = ExtResource("1_hrkfc")
+
+[node name="sprite_pivot" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="sprite_pivot" node_paths=PackedStringArray("parent")]
+material = SubResource("ShaderMaterial_4u3d2")
+texture = ExtResource("2_0q4lb")
+script = ExtResource("3_aoxnl")
+parent = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(1, 1, 1, 0.929412)
+shape = SubResource("CircleShape2D_bb37h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4flfy")
+volume_db = -18.353

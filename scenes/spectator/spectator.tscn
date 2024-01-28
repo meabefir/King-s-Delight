@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://whel3ertfupq"]
+
+[ext_resource type="Script" path="res://scenes/spectator/spectator.gd" id="1_nrvhm"]
+[ext_resource type="Texture2D" uid="uid://ccom1mmbs11ek" path="res://assets/sprites/spectator_green.png" id="2_0rgxe"]
+[ext_resource type="Script" path="res://scripts/sprite_render_fix.gd" id="3_54g7a"]
+
+[sub_resource type="Animation" id="Animation_tlgbu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite_pivot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6u1up"]
+resource_name = "throw"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite_pivot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_item"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q7msm"]
+_data = {
+"RESET": SubResource("Animation_tlgbu"),
+"throw": SubResource("Animation_6u1up")
+}
+
+[node name="spectator" type="Node2D"]
+script = ExtResource("1_nrvhm")
+
+[node name="sprite_pivot" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="sprite_pivot" node_paths=PackedStringArray("parent")]
+texture = ExtResource("2_0rgxe")
+script = ExtResource("3_54g7a")
+parent = NodePath("..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q7msm")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

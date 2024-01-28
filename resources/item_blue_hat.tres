@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://dsyff00matp7"]
+
+[ext_resource type="Script" path="res://scripts/item_resource.gd" id="1_vn8f5"]
+[ext_resource type="Texture2D" uid="uid://54q1vxcespwu" path="res://assets/sprites/item_hat.png" id="2_wnvd5"]
+
+[resource]
+script = ExtResource("1_vn8f5")
+sprite = ExtResource("2_wnvd5")
+item_type = 0
+clothing_type = 0
+color = Color(0, 0, 1, 1)

@@ -1,0 +1,13 @@
+res://scenes/game/game.tscn
+res://shaders/outline.gdshader
+res://shaders/jester.gdshader
+res://scenes/game/arena.tscn
+res://scenes/king/king.tscn
+res://scenes/jester/jester.tscn
+res://scenes/game/item.tscn
+res://scenes/spectator/spectator.tscn
+res://scenes/game/jester_ball.tscn
+res://test/rigid_body_2d.tscn
+res://scenes/game/ui_clothing_variant.tscn
+res://scenes/menu.tscn
+res://scenes/game/jester_ball.gd

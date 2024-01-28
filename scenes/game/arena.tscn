@@ -1,0 +1,848 @@
+[gd_scene load_steps=29 format=3 uid="uid://bh0gpybg04leu"]
+
+[ext_resource type="Script" path="res://scenes/game/arena.gd" id="1_61lbm"]
+[ext_resource type="PackedScene" uid="uid://vlvisa2orv51" path="res://scenes/king/king.tscn" id="1_b6ilj"]
+[ext_resource type="Script" path="res://scenes/game/spectators_manager.gd" id="2_2tgda"]
+[ext_resource type="Texture2D" uid="uid://tmfambhsiii0" path="res://assets/sprites/background.png" id="2_32v51"]
+[ext_resource type="Texture2D" uid="uid://b4yixxlkxloht" path="res://assets/sprites/ceiling.png" id="3_4jler"]
+[ext_resource type="PackedScene" uid="uid://b2xtpmicy7x3c" path="res://scenes/jester/jester.tscn" id="3_5eb6f"]
+[ext_resource type="PackedScene" uid="uid://whel3ertfupq" path="res://scenes/spectator/spectator.tscn" id="3_q5n51"]
+[ext_resource type="Script" path="res://scenes/game/items_manager.gd" id="4_4hpff"]
+[ext_resource type="Texture2D" uid="uid://bwrh2qdnc7dkd" path="res://assets/sprites/upper_court.png" id="4_ia6j6"]
+[ext_resource type="Texture2D" uid="uid://by5fy0r1dfaqb" path="res://assets/sprites/lower_court.png" id="4_tko3p"]
+[ext_resource type="Texture2D" uid="uid://5htxbv5s24ar" path="res://assets/sprites/platform.png" id="6_ubygr"]
+[ext_resource type="Texture2D" uid="uid://b6s2dlvpge3ty" path="res://assets/sprites/laugh_progress_background.png" id="7_kqd4l"]
+[ext_resource type="Texture2D" uid="uid://hr5vfj7w0kq5" path="res://assets/sprites/laugh_progress_over.png" id="8_dsbp4"]
+[ext_resource type="Texture2D" uid="uid://o3efcusbcux0" path="res://assets/sprites/laugh_progress_progress.png" id="9_ei3cy"]
+[ext_resource type="Texture2D" uid="uid://b1pur1k2nnr7y" path="res://assets/sprites/clutter_progress_progress.png" id="10_uo553"]
+[ext_resource type="Texture2D" uid="uid://btlcx1cdjwbnt" path="res://assets/sprites/text_laugh_o_meter.png" id="11_jxqyc"]
+[ext_resource type="Texture2D" uid="uid://ddkqdlgnn7vy2" path="res://assets/sprites/text_clutter.png" id="12_d0d3c"]
+[ext_resource type="Script" path="res://scenes/game/clothing_chooser.gd" id="18_gbhvw"]
+[ext_resource type="PackedScene" uid="uid://j13mm886fx5h" path="res://scenes/game/ui_clothing_variant.tscn" id="19_34s53"]
+[ext_resource type="AudioStream" uid="uid://dico0yg50jfst" path="res://assets/sounds/Fantasy Vol2 Small Boss Intensity 1.wav" id="20_x4cnk"]
+[ext_resource type="AudioStream" uid="uid://b4k27lvuw7fvr" path="res://assets/sounds/Item Equip.wav" id="21_p4s23"]
+
+[sub_resource type="Animation" id="Animation_07e6g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("king:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, 346)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("visuals/UpperCourtLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 171)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("visuals/LowerCourtLeft:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(36, 321)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("spectators_manager/spectators/spectator:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(131, 221)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("spectators_manager/spectators/spectator2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(100, 218)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("spectators_manager/spectators/spectator3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(66, 218)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("spectators_manager/spectators/spectator4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, 220)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("spectators_manager/spectators/spectator5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(44, 127)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("spectators_manager/spectators/spectator6:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(78, 131)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("spectators_manager/spectators/spectator7:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 129)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("spectators_manager/spectators/spectator8:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(559, 128)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("spectators_manager/spectators/spectator9:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(593, 125)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("spectators_manager/spectators/spectator10:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(627, 125)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("spectators_manager/spectators/spectator11:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(533, 223)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("spectators_manager/spectators/spectator12:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(565, 220)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("spectators_manager/spectators/spectator13:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(596, 218)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("spectators_manager/spectators/spectator14:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(629, 220)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("visuals/UpperCourtLeft2:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(605, 171)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("visuals/LowerCourtLeft2:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(601, 321)]
+}
+
+[sub_resource type="Animation" id="Animation_fb8ps"]
+resource_name = "start"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("king:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.450625, 1),
+"update": 0,
+"values": [Vector2(320, 642), Vector2(320, 346)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("visuals/UpperCourtLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.2974, 1),
+"update": 0,
+"values": [Vector2(-113, 171), Vector2(40, 171)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("visuals/LowerCourtLeft:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.2974, 1),
+"update": 0,
+"values": [Vector2(-117, 321), Vector2(36, 321)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("spectators_manager/spectators/spectator:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.2974, 1),
+"update": 0,
+"values": [Vector2(-20, 221), Vector2(131, 221)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("spectators_manager/spectators/spectator2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.2974, 1),
+"update": 0,
+"values": [Vector2(-53, 218), Vector2(100, 218)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("spectators_manager/spectators/spectator3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.2974, 1),
+"update": 0,
+"values": [Vector2(-87, 218), Vector2(66, 218)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("spectators_manager/spectators/spectator4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.2974, 1),
+"update": 0,
+"values": [Vector2(-121, 220), Vector2(32, 220)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("spectators_manager/spectators/spectator5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.2974, 1),
+"update": 0,
+"values": [Vector2(-108, 127), Vector2(44, 127)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("spectators_manager/spectators/spectator6:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.2974, 1),
+"update": 0,
+"values": [Vector2(-75, 131), Vector2(78, 131)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("spectators_manager/spectators/spectator7:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.2974, 1),
+"update": 0,
+"values": [Vector2(-41, 129), Vector2(112, 129)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("spectators_manager/spectators/spectator8:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.29, 1),
+"update": 0,
+"values": [Vector2(716, 128), Vector2(559, 128)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("spectators_manager/spectators/spectator9:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.29, 1),
+"update": 0,
+"values": [Vector2(748, 125), Vector2(593, 125)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("spectators_manager/spectators/spectator10:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.29, 1),
+"update": 0,
+"values": [Vector2(784, 125), Vector2(627, 125)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("spectators_manager/spectators/spectator11:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.29, 1),
+"update": 0,
+"values": [Vector2(690, 223), Vector2(533, 223)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("spectators_manager/spectators/spectator12:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.29, 1),
+"update": 0,
+"values": [Vector2(722, 220), Vector2(565, 220)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("spectators_manager/spectators/spectator13:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.29, 1),
+"update": 0,
+"values": [Vector2(753, 218), Vector2(596, 218)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("spectators_manager/spectators/spectator14:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.29, 1),
+"update": 0,
+"values": [Vector2(786, 220), Vector2(629, 220)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("visuals/UpperCourtLeft2:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.29, 1),
+"update": 0,
+"values": [Vector2(762, 171), Vector2(605, 171)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("visuals/LowerCourtLeft2:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2.29, 1),
+"update": 0,
+"values": [Vector2(758, 321), Vector2(601, 321)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nxq68"]
+_data = {
+"RESET": SubResource("Animation_07e6g"),
+"start": SubResource("Animation_fb8ps")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7gpc"]
+size = Vector2(1086, 25.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kftlj"]
+size = Vector2(59, 319.5)
+
+[sub_resource type="Shader" id="Shader_s66qr"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+render_mode unshaded;
+ 
+uniform float width : hint_range(0.0, 16.0);
+uniform vec4 outline_color : source_color;
+ 
+uniform vec4 gray : source_color;
+uniform vec4 white : source_color;
+uniform vec4 color : source_color;
+
+void fragment()
+{
+    vec2 size = vec2(width) / vec2(textureSize(TEXTURE, 0));
+   
+    vec4 sprite_color = texture(TEXTURE, UV);
+	if (sprite_color == gray) {
+		sprite_color = color - vec4(.4, .4, .4, 0);
+	}
+	if (sprite_color == white) {
+		sprite_color = color;
+	}
+
+    float alpha = sprite_color.a;
+    alpha += texture(TEXTURE, UV + vec2(0.0, -size.y)).a;
+    alpha += texture(TEXTURE, UV + vec2(size.x, -size.y)).a;
+    alpha += texture(TEXTURE, UV + vec2(size.x, 0.0)).a;
+    alpha += texture(TEXTURE, UV + vec2(size.x, size.y)).a;
+    alpha += texture(TEXTURE, UV + vec2(0.0, size.y)).a;
+    alpha += texture(TEXTURE, UV + vec2(-size.x, size.y)).a;
+    alpha += texture(TEXTURE, UV + vec2(-size.x, 0.0)).a;
+    alpha += texture(TEXTURE, UV + vec2(-size.x, -size.y)).a;
+   
+    vec3 final_color = mix(outline_color.rgb, sprite_color.rgb, sprite_color.a);
+    COLOR = vec4(final_color, clamp(alpha, 0.0, 1.0));
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_advdl"]
+resource_local_to_scene = true
+shader = SubResource("Shader_s66qr")
+shader_parameter/width = null
+shader_parameter/outline_color = Color(0.984314, 0.94902, 0.211765, 1)
+shader_parameter/gray = null
+shader_parameter/white = null
+shader_parameter/color = null
+
+[node name="arena" type="Node2D"]
+script = ExtResource("1_61lbm")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(94, -67)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nxq68")
+}
+autoplay = "start"
+
+[node name="visuals" type="Node2D" parent="."]
+z_index = -40
+
+[node name="Background" type="Sprite2D" parent="visuals"]
+position = Vector2(243, 226)
+texture = ExtResource("2_32v51")
+
+[node name="Ceiling" type="Sprite2D" parent="visuals"]
+modulate = Color(0.298039, 0.298039, 0.298039, 1)
+position = Vector2(320, 64)
+texture = ExtResource("3_4jler")
+
+[node name="UpperCourtLeft" type="Sprite2D" parent="visuals"]
+z_index = -10
+z_as_relative = false
+position = Vector2(40, 171)
+texture = ExtResource("4_ia6j6")
+
+[node name="LowerCourtLeft" type="Sprite2D" parent="visuals"]
+z_as_relative = false
+position = Vector2(36, 321)
+texture = ExtResource("4_tko3p")
+
+[node name="UpperCourtLeft2" type="Sprite2D" parent="visuals"]
+z_index = -10
+z_as_relative = false
+position = Vector2(605, 171)
+texture = ExtResource("4_ia6j6")
+flip_h = true
+
+[node name="LowerCourtLeft2" type="Sprite2D" parent="visuals"]
+z_as_relative = false
+position = Vector2(601, 321)
+texture = ExtResource("4_tko3p")
+flip_h = true
+
+[node name="king" parent="." node_paths=PackedStringArray("ui_laugh_progress") instance=ExtResource("1_b6ilj")]
+position = Vector2(320, 346)
+ui_laugh_progress = NodePath("../CanvasLayer/laugh_progress")
+
+[node name="spectators_manager" type="Node2D" parent="."]
+script = ExtResource("2_2tgda")
+
+[node name="spectators" type="Node2D" parent="spectators_manager"]
+position = Vector2(0, -25)
+
+[node name="spectator" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -1
+position = Vector2(131, 221)
+
+[node name="spectator2" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -1
+position = Vector2(100, 218)
+
+[node name="spectator3" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -1
+position = Vector2(66, 218)
+
+[node name="spectator4" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -1
+position = Vector2(32, 220)
+
+[node name="spectator5" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -20
+position = Vector2(44, 127)
+
+[node name="spectator6" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -20
+position = Vector2(78, 131)
+
+[node name="spectator7" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -20
+position = Vector2(112, 129)
+
+[node name="spectator8" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -20
+position = Vector2(559, 128)
+
+[node name="Sprite" parent="spectators_manager/spectators/spectator8/sprite_pivot" index="0" node_paths=PackedStringArray("parent")]
+position = Vector2(-30, -3)
+flip_h = true
+parent = NodePath("../../../spectator/sprite_pivot")
+
+[node name="spectator9" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -20
+position = Vector2(593, 125)
+
+[node name="Sprite" parent="spectators_manager/spectators/spectator9/sprite_pivot" index="0" node_paths=PackedStringArray("parent")]
+position = Vector2(-30, -3)
+flip_h = true
+parent = NodePath("../../../spectator/sprite_pivot")
+
+[node name="spectator10" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -20
+position = Vector2(627, 125)
+
+[node name="Sprite" parent="spectators_manager/spectators/spectator10/sprite_pivot" index="0" node_paths=PackedStringArray("parent")]
+position = Vector2(-30, -3)
+flip_h = true
+parent = NodePath("../../../spectator/sprite_pivot")
+
+[node name="spectator11" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -1
+position = Vector2(533, 223)
+
+[node name="Sprite" parent="spectators_manager/spectators/spectator11/sprite_pivot" index="0" node_paths=PackedStringArray("parent")]
+position = Vector2(-30, -3)
+flip_h = true
+parent = NodePath("../../../spectator/sprite_pivot")
+
+[node name="spectator12" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -1
+position = Vector2(565, 220)
+
+[node name="Sprite" parent="spectators_manager/spectators/spectator12/sprite_pivot" index="0" node_paths=PackedStringArray("parent")]
+position = Vector2(-30, -3)
+flip_h = true
+parent = NodePath("../../../spectator/sprite_pivot")
+
+[node name="spectator13" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -1
+position = Vector2(596, 218)
+
+[node name="Sprite" parent="spectators_manager/spectators/spectator13/sprite_pivot" index="0" node_paths=PackedStringArray("parent")]
+position = Vector2(-30, -3)
+flip_h = true
+parent = NodePath("../../../spectator/sprite_pivot")
+
+[node name="spectator14" parent="spectators_manager/spectators" instance=ExtResource("3_q5n51")]
+z_index = -1
+position = Vector2(629, 220)
+
+[node name="Sprite" parent="spectators_manager/spectators/spectator14/sprite_pivot" index="0" node_paths=PackedStringArray("parent")]
+position = Vector2(-30, -3)
+flip_h = true
+parent = NodePath("../../../spectator/sprite_pivot")
+
+[node name="throw_timer" type="Timer" parent="spectators_manager"]
+wait_time = 0.2
+autostart = true
+
+[node name="floor" type="Node2D" parent="."]
+position = Vector2(320, 320)
+
+[node name="Sprite2D" type="Sprite2D" parent="floor"]
+position = Vector2(0, 14)
+texture = ExtResource("6_ubygr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="floor"]
+position = Vector2(0, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_d7gpc")
+
+[node name="world_collisions" type="Node2D" parent="."]
+position = Vector2(0, -22)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="world_collisions"]
+position = Vector2(-10, 323)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world_collisions/StaticBody2D"]
+position = Vector2(-19.5, -142)
+shape = SubResource("RectangleShape2D_kftlj")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="world_collisions"]
+position = Vector2(491, 252)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world_collisions/StaticBody2D2"]
+position = Vector2(178, -70.25)
+shape = SubResource("RectangleShape2D_kftlj")
+
+[node name="items_manager" type="Node2D" parent="."]
+script = ExtResource("4_4hpff")
+
+[node name="items" type="Node2D" parent="items_manager"]
+
+[node name="jester_ball_spawn_points" type="Node2D" parent="items_manager"]
+
+[node name="Node2D" type="Node2D" parent="items_manager/jester_ball_spawn_points"]
+position = Vector2(-81, 296)
+
+[node name="Node2D2" type="Node2D" parent="items_manager/jester_ball_spawn_points"]
+position = Vector2(665, 294)
+
+[node name="jester_balls" type="Node2D" parent="items_manager"]
+
+[node name="jester_ball_timer" type="Timer" parent="items_manager"]
+wait_time = 5.0
+autostart = true
+
+[node name="jester" parent="." instance=ExtResource("3_5eb6f")]
+position = Vector2(308, 314)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+enabled = false
+zoom = Vector2(3, 3)
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(-269, -221)
+anchor_mode = 0
+enabled = false
+zoom = Vector2(0.5, 0.5)
+
+[node name="helpers" type="Node2D" parent="."]
+
+[node name="middle_hor" type="Node2D" parent="helpers"]
+position = Vector2(320, 252)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="laugh_progress" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 336.0
+offset_right = 201.0
+offset_bottom = 356.0
+scale = Vector2(0.7, 1)
+value = 10.0
+texture_under = ExtResource("7_kqd4l")
+texture_over = ExtResource("8_dsbp4")
+texture_progress = ExtResource("9_ei3cy")
+
+[node name="clutter_progress" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 499.0
+offset_top = 336.0
+offset_right = 699.0
+offset_bottom = 356.0
+scale = Vector2(0.7, 1)
+value = 48.0
+texture_under = ExtResource("7_kqd4l")
+texture_over = ExtResource("8_dsbp4")
+texture_progress = ExtResource("10_uo553")
+
+[node name="laugh_preview" type="TextureRect" parent="CanvasLayer"]
+offset_left = 84.0
+offset_top = 339.0
+offset_right = 104.0
+offset_bottom = 359.0
+
+[node name="TextLaughOMeter" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(164, 346)
+texture = ExtResource("11_jxqyc")
+
+[node name="TextClutter" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(481, 346)
+texture = ExtResource("12_d0d3c")
+
+[node name="clothing_chooser" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 192.0
+offset_top = 331.0
+offset_right = 449.0
+offset_bottom = 363.0
+script = ExtResource("18_gbhvw")
+
+[node name="ui_clothing_variant" parent="CanvasLayer/clothing_chooser" instance=ExtResource("19_34s53")]
+material = SubResource("ShaderMaterial_advdl")
+layout_mode = 2
+
+[node name="cloth_pick_timer" type="Timer" parent="CanvasLayer"]
+wait_time = 2.0
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_x4cnk")
+volume_db = -25.39
+pitch_scale = 0.64
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_p4s23")
+volume_db = -25.39
+pitch_scale = 0.64
+
+[connection signal="timeout" from="spectators_manager/throw_timer" to="spectators_manager" method="_on_throw_timer_timeout"]
+[connection signal="timeout" from="items_manager/jester_ball_timer" to="items_manager" method="_on_jester_ball_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/cloth_pick_timer" to="CanvasLayer/clothing_chooser" method="_on_cloth_pick_timer_timeout"]
+
+[editable path="spectators_manager/spectators/spectator8"]
+[editable path="spectators_manager/spectators/spectator9"]
+[editable path="spectators_manager/spectators/spectator10"]
+[editable path="spectators_manager/spectators/spectator11"]
+[editable path="spectators_manager/spectators/spectator12"]
+[editable path="spectators_manager/spectators/spectator13"]
+[editable path="spectators_manager/spectators/spectator14"]
+[editable path="jester"]

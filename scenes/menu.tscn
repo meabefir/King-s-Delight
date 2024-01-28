@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://c23vgtbbgg6mi"]
+
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_xviun"]
+[ext_resource type="Texture2D" uid="uid://dpxe8q48puals" path="res://assets/sprites/king_body.png" id="2_viry8"]
+[ext_resource type="Texture2D" uid="uid://drowd53q4gtqm" path="res://assets/sprites/king_head.png" id="3_ad852"]
+[ext_resource type="Texture2D" uid="uid://dpsvu0uw7nrqi" path="res://assets/sprites/jester_ball.png" id="4_vamsa"]
+[ext_resource type="Texture2D" uid="uid://cbevwsciitskj" path="res://assets/sprites/jester_idle.png" id="5_xbd2g"]
+[ext_resource type="AudioStream" uid="uid://bje2h2hfuj0kl" path="res://assets/sounds/Classical Excitement Intensity 2.wav" id="6_vx1dk"]
+
+[sub_resource type="SystemFont" id="SystemFont_p2f1s"]
+
+[node name="menu" type="CanvasLayer"]
+script = ExtResource("1_xviun")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1992.0
+offset_bottom = 1156.0
+color = Color(0, 0, 0, 1)
+
+[node name="KingBody" type="Sprite2D" parent="."]
+position = Vector2(1490.2, 658)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("2_viry8")
+
+[node name="KingHead" type="Sprite2D" parent="."]
+position = Vector2(1490.2, 676)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("3_ad852")
+
+[node name="JesterBall" type="Sprite2D" parent="."]
+position = Vector2(876.2, 757)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("4_vamsa")
+
+[node name="JesterBall2" type="Sprite2D" parent="."]
+position = Vector2(880.2, 670)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("5_xbd2g")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 1992.0
+offset_bottom = 1156.0
+color = Color(0.0980392, 0.109804, 0.188235, 0.780392)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 729.0
+offset_top = 804.0
+offset_right = 1255.0
+offset_bottom = 1005.0
+theme_override_fonts/font = SubResource("SystemFont_p2f1s")
+theme_override_font_sizes/font_size = 141
+text = "PLAY"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 1850.0
+offset_bottom = 577.0
+theme_override_font_sizes/font_size = 29
+text = "Welcome to \"King's Delight\"! Your mission is to please the king and the common folk in the medieval kingdom of Eldoria.
+
+Task 1: Dress to Impress
+Head to the wardrobe chamber and choose an outfit that suits the king's royal taste.
+
+Task 2: Boulder Balancing Act
+Navigate the courtyard and showcase your agility by rolling and balancing on giant boulders for the king's amusement.
+
+Task 3: Royal Cleanup Duty
+Keep the castle room spotless to ensure the king's satisfaction.
+
+Perform these tasks with wit and skill to become the kingdom's most beloved jester!"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 69.0
+offset_top = 695.0
+offset_right = 480.0
+offset_bottom = 1012.0
+theme_override_colors/font_color = Color(0.898039, 0.776471, 0.25098, 1)
+theme_override_font_sizes/font_size = 44
+text = "Controls:
+A, D - left, right
+Space - jump
+E - pick up/use item
+Q - throw item"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vx1dk")
+volume_db = -28.383
+autoplay = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

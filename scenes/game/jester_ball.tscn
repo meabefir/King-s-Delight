@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://dce0y1kdwfcc1"]
+
+[ext_resource type="Script" path="res://scenes/game/jester_ball.gd" id="1_xobey"]
+[ext_resource type="Script" path="res://scripts/sprite_render_fix.gd" id="2_06i0k"]
+[ext_resource type="Texture2D" uid="uid://dpsvu0uw7nrqi" path="res://assets/sprites/jester_ball.png" id="2_mup7m"]
+[ext_resource type="AudioStream" uid="uid://dcjttsyaoh7rr" path="res://assets/sounds/53850-HUMAN_VOICE_CROWD_PAINFUL_OHH_01.wav" id="4_h51ja"]
+[ext_resource type="AudioStream" uid="uid://638x2hwlh4ko" path="res://assets/sounds/253781-Crowd-Cheer-Sports-Arena-Medium_Distant-Devote-Female-Sweetener_-some_applause.wav" id="5_i7rtx"]
+[ext_resource type="AudioStream" uid="uid://d0bxof7reo6i4" path="res://assets/sounds/540087-zapsplat-foley-large-heavy-ball-or-boulder-rolling-rumbling-67165.wav" id="6_81bi4"]
+[ext_resource type="AudioStream" uid="uid://bkug6gjx5knr0" path="res://assets/sounds/Orch Rock Anticipation Main.wav" id="7_w1n1s"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8pwka"]
+friction = 0.4
+rough = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qpcgp"]
+radius = 18.0
+
+[node name="jester_ball" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 23
+mass = 200.0
+physics_material_override = SubResource("PhysicsMaterial_8pwka")
+continuous_cd = 2
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_xobey")
+
+[node name="Sprite2D" type="Sprite2D" parent="." node_paths=PackedStringArray("parent")]
+texture = ExtResource("2_mup7m")
+script = ExtResource("2_06i0k")
+parent = NodePath("..")
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qpcgp")
+
+[node name="random_impulse_timer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h51ja")
+volume_db = -24.413
+max_polyphony = 3
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_i7rtx")
+volume_db = -24.413
+pitch_scale = 0.76
+max_polyphony = 3
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_81bi4")
+volume_db = -14.706
+pitch_scale = 0.95
+max_polyphony = 3
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_w1n1s")
+volume_db = -22.102
+pitch_scale = 0.95
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="random_impulse_timer" to="." method="_on_random_impulse_timer_timeout"]

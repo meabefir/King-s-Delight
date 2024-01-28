@@ -1,0 +1,16 @@
+res://resources/item_blue_hat.tres::1cbe880b6c5f2700292df2ceda1cca9c::1706432639::res://.godot/exported/133200997/export-c3b9dd2f86ea340e4c90934351e3cb70-item_blue_hat.res
+res://resources/item_green_hat.tres::06872afa1ce19b9d058e345bbc62cf20::1706432677::res://.godot/exported/133200997/export-db8dbf42b9d80c430a22f3ec2e2db384-item_green_hat.res
+res://resources/item_orange_suit.tres::637902c15fd8dd7d8d9c0cc7788d424c::1706434741::res://.godot/exported/133200997/export-3d6e430ba8d67578c092f05183c6a070-item_orange_suit.res
+res://resources/item_purple_suit.tres::80c2de53f6e66ed49e76286e4b4f9576::1706434360::res://.godot/exported/133200997/export-64100ac4c08d260fb2ece4f72696c6e9-item_purple_suit.res
+res://resources/item_red_hat.tres::4470dda98ec733121ce629a4b7319102::1706432667::res://.godot/exported/133200997/export-2fcd523fbc290575fe5c1a719ccc2f1c-item_red_hat.res
+res://resources/item_teal_suit.tres::bbced6bf3161fd133843a07941ebc15e::1706434379::res://.godot/exported/133200997/export-b4e3be846ce22e23a850f4210a28fa80-item_teal_suit.res
+res://scenes/game/arena.tscn::a02dcc64af3e021abd7f1e1603e03123::1706452632::res://.godot/exported/133200997/export-d7d04ca14f95fe1e06948b3cdc720c2e-arena.scn
+res://scenes/game/game.tscn::b330938592c57e5c834d14f49c2ebc0f::1706452632::res://.godot/exported/133200997/export-69e963a49695dd4030e5c61a12b8ddfe-game.scn
+res://scenes/game/item.tscn::bf869b3d8eec03536e5e375c93a5f741::1706452632::res://.godot/exported/133200997/export-6fde4ce0405def35ba10b841c3749544-item.scn
+res://scenes/game/jester_ball.tscn::725e646db5bc3a7fb15c09676e3b5d5d::1706452632::res://.godot/exported/133200997/export-c4bb780c05bd5157778e5e43f3c35560-jester_ball.scn
+res://scenes/game/ui_clothing_variant.tscn::aef8c9ea1facff90c6b7a44d9c3dbf3c::1706452632::res://.godot/exported/133200997/export-07d9c666cf49dd59b3090c43188cb25f-ui_clothing_variant.scn
+res://scenes/jester/jester.tscn::ce69c40e2ee45b973b097e86f1b7ff6e::1706452632::res://.godot/exported/133200997/export-cc852da894968a2a0d8ebab855a446ea-jester.scn
+res://scenes/king/king.tscn::2b67db4aa7cb6dc8eca1cb037c3ddcab::1706452632::res://.godot/exported/133200997/export-cf7b196c4b05d69174661f57587d44df-king.scn
+res://scenes/spectator/spectator.tscn::d7d8a1b3886c113b67b469af7f9a64a8::1706452632::res://.godot/exported/133200997/export-860a717bad6985bed757fd256945fb6a-spectator.scn
+res://scenes/menu.tscn::af1729fe5acc9b08672c603bbe03aa1d::1706452639::res://.godot/exported/133200997/export-1ce5c86e8ca186dcaaeaa8726f1268db-menu.scn
+res://test/rigid_body_2d.tscn::0d5933ce7e8244faac824ec1ff87fb66::1706452632::res://.godot/exported/133200997/export-598a17ee4b354d1cf34e701850c254f5-rigid_body_2d.scn

@@ -1,0 +1,14 @@
+AudioStreamPlayer
+Label
+Button
+ColorRect
+TextureRect
+CanvasLayer
+AnimationPlayer
+Timer
+HBoxContainer
+AnimatedSprite2D
+Sprite2D
+Node2D
+CanvasModulate
+CollisionShape2D

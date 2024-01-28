@@ -1,0 +1,167 @@
+[gd_scene load_steps=18 format=3 uid="uid://b2xtpmicy7x3c"]
+
+[ext_resource type="Script" path="res://scenes/jester/jester.gd" id="1_2kfjb"]
+[ext_resource type="Texture2D" uid="uid://cbevwsciitskj" path="res://assets/sprites/jester_idle.png" id="2_jyiv8"]
+[ext_resource type="Script" path="res://scripts/sprite_render_fix.gd" id="3_0vbbo"]
+[ext_resource type="Texture2D" uid="uid://cqpjtksmspmd1" path="res://assets/sprites/jester_run.png" id="4_q6yxj"]
+[ext_resource type="AudioStream" uid="uid://clk0i0phamxau" path="res://assets/sounds/fast-simple-chop-5-6270.mp3" id="5_wy83u"]
+[ext_resource type="AudioStream" uid="uid://givejdsgi2fx" path="res://assets/sounds/295559-JACKET_THROWN_ON_BED.wav" id="6_6hwlj"]
+[ext_resource type="AudioStream" uid="uid://c7x3y8tgckg5u" path="res://assets/sounds/273663-Ninja-Jump-2.wav" id="7_iao5p"]
+[ext_resource type="AudioStream" uid="uid://dq75dprqfpjmr" path="res://assets/sounds/540278-zapsplat-bells-small-bells-costume-jester-short-movement-jingle-001-55955.wav" id="8_hnhlu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wilm8"]
+friction = 0.0
+
+[sub_resource type="Shader" id="Shader_s6q5e"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform vec4 gray_hat : source_color;
+uniform vec4 gray_body : source_color;
+uniform vec4 white_hat : source_color;
+uniform vec4 white_body : source_color;
+
+uniform vec4 color_hat : source_color;
+uniform vec4 color_body : source_color;
+ 
+void fragment()
+{
+    vec4 sprite_color = texture(TEXTURE, UV);
+	if (sprite_color == gray_hat) {
+		sprite_color = color_hat - vec4(.1, .1, .1, 0);
+	}
+	
+	if (sprite_color == white_hat) {
+		sprite_color = color_hat;
+	}
+	
+	if (sprite_color == gray_body) {
+		sprite_color = color_body - vec4(.1, .1, .1, 0);
+	}
+	if (sprite_color == white_body) {
+		sprite_color = color_body;
+	}
+   
+    COLOR = sprite_color;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_txp6l"]
+shader = SubResource("Shader_s6q5e")
+shader_parameter/gray_hat = Color(0.741176, 0.741176, 0.741176, 1)
+shader_parameter/gray_body = Color(0.737255, 0.741176, 0.741176, 1)
+shader_parameter/white_hat = Color(1, 1, 1, 1)
+shader_parameter/white_body = Color(0.996078, 1, 1, 1)
+shader_parameter/color_hat = Color(0.105882, 0.560784, 0.698039, 1)
+shader_parameter/color_body = Color(0.882353, 0.0431373, 0.458824, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bep7c"]
+atlas = ExtResource("4_q6yxj")
+region = Rect2(0, 0, 30, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwrux"]
+atlas = ExtResource("4_q6yxj")
+region = Rect2(30, 0, 30, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwsn2"]
+atlas = ExtResource("4_q6yxj")
+region = Rect2(60, 0, 30, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrf3g"]
+atlas = ExtResource("4_q6yxj")
+region = Rect2(90, 0, 30, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nd8jw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jyiv8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bep7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwrux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwsn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrf3g")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c5io3"]
+radius = 5.0
+
+[node name="jester" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 25
+mass = 50.0
+physics_material_override = SubResource("PhysicsMaterial_wilm8")
+lock_rotation = true
+continuous_cd = 2
+script = ExtResource("1_2kfjb")
+
+[node name="JesterIdle" type="Sprite2D" parent="." node_paths=PackedStringArray("parent")]
+visible = false
+texture = ExtResource("2_jyiv8")
+offset = Vector2(2, -19)
+script = ExtResource("3_0vbbo")
+parent = NodePath("..")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("parent")]
+material = SubResource("ShaderMaterial_txp6l")
+sprite_frames = SubResource("SpriteFrames_nd8jw")
+animation = &"idle"
+offset = Vector2(2, -19)
+script = ExtResource("3_0vbbo")
+parent = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_c5io3")
+debug_color = Color(0, 0.6, 0.701961, 0.298039)
+
+[node name="grab_pivot" type="Node2D" parent="."]
+position = Vector2(0, -40)
+
+[node name="jump_raycast" type="RayCast2D" parent="."]
+position = Vector2(0, -3)
+target_position = Vector2(0, 10)
+collision_mask = 17
+
+[node name="ground_raycast" type="RayCast2D" parent="."]
+position = Vector2(0, -3)
+target_position = Vector2(0, 10)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wy83u")
+volume_db = -17.089
+max_polyphony = 4
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_6hwlj")
+volume_db = -17.089
+max_polyphony = 4
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_iao5p")
+volume_db = -23.475
+pitch_scale = 1.5
+max_polyphony = 4
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_hnhlu")
+volume_db = -47.44
+pitch_scale = 1.5
+max_polyphony = 4

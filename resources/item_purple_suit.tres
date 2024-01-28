@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://ccn7ge7jn8e54"]
+
+[ext_resource type="Script" path="res://scripts/item_resource.gd" id="1_m2mnw"]
+[ext_resource type="Texture2D" uid="uid://rc05hdnqlk8m" path="res://assets/sprites/item_suit.png" id="2_21e3f"]
+
+[resource]
+script = ExtResource("1_m2mnw")
+sprite = ExtResource("2_21e3f")
+item_type = 0
+clothing_type = 1
+color = Color(0.52549, 0, 0.619608, 1)
