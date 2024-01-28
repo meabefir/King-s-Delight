@@ -52,8 +52,8 @@ shader_parameter/gray_hat = Color(0.741176, 0.741176, 0.741176, 1)
 shader_parameter/gray_body = Color(0.737255, 0.741176, 0.741176, 1)
 shader_parameter/white_hat = Color(1, 1, 1, 1)
 shader_parameter/white_body = Color(0.996078, 1, 1, 1)
-shader_parameter/color_hat = Color(0.105882, 0.560784, 0.698039, 1)
-shader_parameter/color_body = Color(0.882353, 0.0431373, 0.458824, 1)
+shader_parameter/color_hat = Color(0.603922, 0.0509804, 0.423529, 1)
+shader_parameter/color_body = Color(0, 0.615686, 0.796078, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bep7c"]
 atlas = ExtResource("4_q6yxj")

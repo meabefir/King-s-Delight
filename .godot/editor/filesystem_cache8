@@ -1,8 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706452583
-export_presets.cfg::TextFile::-1::1706451651::0::1::::<><>::
+::res://::1706468775
+export_presets.cfg::TextFile::-1::1706452651::0::1::::<><>::
 icon.svg::CompressedTexture2D::5337897918762607616::1706344826::1706344832::1::::<><>::
-settings.json::JSON::-1::1706444209::0::1::::<><>::
+readme.md::TextFile::-1::1706454406::0::1::::<><>::
+settings.json::JSON::-1::1706453195::0::1::::<><>::
 ::res://assets/::1706442088
 ::res://assets/audio_streams/::1706442467
 ::res://assets/sounds/::1706446922
@@ -62,38 +63,38 @@ item_orange_suit.tres::Resource/Resource::564121751698179248::1706434741::0::1::
 item_purple_suit.tres::Resource/Resource::4942009883951735969::1706434360::0::1::::<><>::res://scripts/item_resource.gd<>uid://rc05hdnqlk8m::::res://assets/sprites/item_suit.png
 item_red_hat.tres::Resource/Resource::3526474871203900635::1706432667::0::1::::<><>::res://scripts/item_resource.gd<>uid://54q1vxcespwu::::res://assets/sprites/item_hat.png
 item_teal_suit.tres::Resource/Resource::8945024546983804386::1706434379::0::1::::<><>::res://scripts/item_resource.gd<>uid://rc05hdnqlk8m::::res://assets/sprites/item_suit.png
-::res://scenes/::1706451604
+::res://scenes/::1706457338
 menu.gd::GDScript::-1::1706448115::0::1::::<>CanvasLayer<>::
-menu.tscn::PackedScene::6727029493880457996::1706451604::0::1::::<><>::res://scenes/menu.gd<>uid://dpxe8q48puals::::res://assets/sprites/king_body.png<>uid://drowd53q4gtqm::::res://assets/sprites/king_head.png<>uid://dpsvu0uw7nrqi::::res://assets/sprites/jester_ball.png<>uid://cbevwsciitskj::::res://assets/sprites/jester_idle.png<>uid://bje2h2hfuj0kl::::res://assets/sounds/Classical Excitement Intensity 2.wav
-::res://scenes/game/::1706451560
+menu.tscn::PackedScene::6727029493880457996::1706457338::0::1::::<><>::res://scenes/menu.gd<>uid://dpxe8q48puals::::res://assets/sprites/king_body.png<>uid://drowd53q4gtqm::::res://assets/sprites/king_head.png<>uid://dpsvu0uw7nrqi::::res://assets/sprites/jester_ball.png<>uid://cbevwsciitskj::::res://assets/sprites/jester_idle.png<>uid://bje2h2hfuj0kl::::res://assets/sounds/Classical Excitement Intensity 2.wav
+::res://scenes/game/::1706457338
 arena.gd::GDScript::-1::1706444204::0::1::::<>Node2D<>::
-arena.tscn::PackedScene::2929744384288375872::1706451559::0::1::::<><>::res://scenes/game/arena.gd<>uid://vlvisa2orv51::::res://scenes/king/king.tscn<>res://scenes/game/spectators_manager.gd<>uid://tmfambhsiii0::::res://assets/sprites/background.png<>uid://b4yixxlkxloht::::res://assets/sprites/ceiling.png<>uid://b2xtpmicy7x3c::::res://scenes/jester/jester.tscn<>uid://whel3ertfupq::::res://scenes/spectator/spectator.tscn<>res://scenes/game/items_manager.gd<>uid://bwrh2qdnc7dkd::::res://assets/sprites/upper_court.png<>uid://by5fy0r1dfaqb::::res://assets/sprites/lower_court.png<>uid://5htxbv5s24ar::::res://assets/sprites/platform.png<>uid://b6s2dlvpge3ty::::res://assets/sprites/laugh_progress_background.png<>uid://hr5vfj7w0kq5::::res://assets/sprites/laugh_progress_over.png<>uid://o3efcusbcux0::::res://assets/sprites/laugh_progress_progress.png<>uid://b1pur1k2nnr7y::::res://assets/sprites/clutter_progress_progress.png<>uid://btlcx1cdjwbnt::::res://assets/sprites/text_laugh_o_meter.png<>uid://ddkqdlgnn7vy2::::res://assets/sprites/text_clutter.png<>res://scenes/game/clothing_chooser.gd<>uid://j13mm886fx5h::::res://scenes/game/ui_clothing_variant.tscn<>uid://dico0yg50jfst::::res://assets/sounds/Fantasy Vol2 Small Boss Intensity 1.wav<>uid://b4k27lvuw7fvr::::res://assets/sounds/Item Equip.wav
+arena.tscn::PackedScene::2929744384288375872::1706457337::0::1::::<><>::res://scenes/game/arena.gd<>uid://vlvisa2orv51::::res://scenes/king/king.tscn<>res://scenes/game/spectators_manager.gd<>uid://tmfambhsiii0::::res://assets/sprites/background.png<>uid://b4yixxlkxloht::::res://assets/sprites/ceiling.png<>uid://b2xtpmicy7x3c::::res://scenes/jester/jester.tscn<>uid://whel3ertfupq::::res://scenes/spectator/spectator.tscn<>res://scenes/game/items_manager.gd<>uid://bwrh2qdnc7dkd::::res://assets/sprites/upper_court.png<>uid://by5fy0r1dfaqb::::res://assets/sprites/lower_court.png<>uid://5htxbv5s24ar::::res://assets/sprites/platform.png<>uid://b6s2dlvpge3ty::::res://assets/sprites/laugh_progress_background.png<>uid://hr5vfj7w0kq5::::res://assets/sprites/laugh_progress_over.png<>uid://o3efcusbcux0::::res://assets/sprites/laugh_progress_progress.png<>uid://b1pur1k2nnr7y::::res://assets/sprites/clutter_progress_progress.png<>uid://btlcx1cdjwbnt::::res://assets/sprites/text_laugh_o_meter.png<>uid://ddkqdlgnn7vy2::::res://assets/sprites/text_clutter.png<>res://scenes/game/clothing_chooser.gd<>uid://j13mm886fx5h::::res://scenes/game/ui_clothing_variant.tscn<>uid://dico0yg50jfst::::res://assets/sounds/Fantasy Vol2 Small Boss Intensity 1.wav<>uid://b4k27lvuw7fvr::::res://assets/sounds/Item Equip.wav
 clothing_chooser.gd::GDScript::-1::1706447736::0::1::::<>HBoxContainer<>::
-game.tscn::PackedScene::4710723871243623896::1706451559::0::1::::<><>::uid://bh0gpybg04leu::::res://scenes/game/arena.tscn
+game.tscn::PackedScene::4710723871243623896::1706457337::0::1::::<><>::uid://bh0gpybg04leu::::res://scenes/game/arena.tscn
 item.gd::GDScript::-1::1706442892::0::1::::Item<>RigidBody2D<>::
 item.gdshader::Shader::-1::1706359849::0::1::::<><>::
-item.tscn::PackedScene::8528930374929593866::1706451559::0::1::::<><>::res://scenes/game/item.gd<>uid://54q1vxcespwu::::res://assets/sprites/item_hat.png<>res://shaders/outline.gdshader<>res://scripts/sprite_render_fix.gd<>uid://css1bbfepr87n::::res://assets/sounds/clothes-drop-2-40202.mp3
+item.tscn::PackedScene::8528930374929593866::1706457338::0::1::::<><>::res://scenes/game/item.gd<>uid://54q1vxcespwu::::res://assets/sprites/item_hat.png<>res://shaders/outline.gdshader<>res://scripts/sprite_render_fix.gd<>uid://css1bbfepr87n::::res://assets/sounds/clothes-drop-2-40202.mp3
 items_manager.gd::GDScript::-1::1706439961::0::1::::ItemsManager<>Node2D<>::
-jester_ball.gd::GDScript::-1::1706446257::0::1::::JesterBall<>RigidBody2D<>::
-jester_ball.tscn::PackedScene::7309459414465538638::1706451560::0::1::::<><>::res://scenes/game/jester_ball.gd<>res://scripts/sprite_render_fix.gd<>uid://dpsvu0uw7nrqi::::res://assets/sprites/jester_ball.png<>uid://dcjttsyaoh7rr::::res://assets/sounds/53850-HUMAN_VOICE_CROWD_PAINFUL_OHH_01.wav<>uid://638x2hwlh4ko::::res://assets/sounds/253781-Crowd-Cheer-Sports-Arena-Medium_Distant-Devote-Female-Sweetener_-some_applause.wav<>uid://d0bxof7reo6i4::::res://assets/sounds/540087-zapsplat-foley-large-heavy-ball-or-boulder-rolling-rumbling-67165.wav<>uid://bkug6gjx5knr0::::res://assets/sounds/Orch Rock Anticipation Main.wav
+jester_ball.gd::GDScript::-1::1706453177::0::1::::JesterBall<>RigidBody2D<>::
+jester_ball.tscn::PackedScene::7309459414465538638::1706457338::0::1::::<><>::res://scenes/game/jester_ball.gd<>res://scripts/sprite_render_fix.gd<>uid://dpsvu0uw7nrqi::::res://assets/sprites/jester_ball.png<>uid://dcjttsyaoh7rr::::res://assets/sounds/53850-HUMAN_VOICE_CROWD_PAINFUL_OHH_01.wav<>uid://638x2hwlh4ko::::res://assets/sounds/253781-Crowd-Cheer-Sports-Arena-Medium_Distant-Devote-Female-Sweetener_-some_applause.wav<>uid://d0bxof7reo6i4::::res://assets/sounds/540087-zapsplat-foley-large-heavy-ball-or-boulder-rolling-rumbling-67165.wav<>uid://bkug6gjx5knr0::::res://assets/sounds/Orch Rock Anticipation Main.wav
 spectators_manager.gd::GDScript::-1::1706447440::0::1::::SpectatorsManager<>Node2D<>::
 ui_clothing_variant.gd::GDScript::-1::1706438520::0::1::::<>TextureRect<>::
-ui_clothing_variant.tscn::PackedScene::687095602471932375::1706451560::0::1::::<><>::uid://54q1vxcespwu::::res://assets/sprites/item_hat.png<>res://scenes/game/ui_clothing_variant.gd
-::res://scenes/jester/::1706451559
-jester.gd::GDScript::-1::1706445963::0::1::::Jester<>RigidBody2D<>::
+ui_clothing_variant.tscn::PackedScene::687095602471932375::1706457338::0::1::::<><>::uid://54q1vxcespwu::::res://assets/sprites/item_hat.png<>res://scenes/game/ui_clothing_variant.gd
+::res://scenes/jester/::1706457338
+jester.gd::GDScript::-1::1706456126::0::1::::Jester<>RigidBody2D<>::
 jester.gdshader::Shader::-1::1706431572::0::1::::<><>::
-jester.tscn::PackedScene::4330181202797351766::1706451559::0::1::::<><>::res://scenes/jester/jester.gd<>uid://cbevwsciitskj::::res://assets/sprites/jester_idle.png<>res://scripts/sprite_render_fix.gd<>uid://cqpjtksmspmd1::::res://assets/sprites/jester_run.png<>uid://clk0i0phamxau::::res://assets/sounds/fast-simple-chop-5-6270.mp3<>uid://givejdsgi2fx::::res://assets/sounds/295559-JACKET_THROWN_ON_BED.wav<>uid://c7x3y8tgckg5u::::res://assets/sounds/273663-Ninja-Jump-2.wav<>uid://dq75dprqfpjmr::::res://assets/sounds/540278-zapsplat-bells-small-bells-costume-jester-short-movement-jingle-001-55955.wav
-::res://scenes/king/::1706451559
+jester.tscn::PackedScene::4330181202797351766::1706457338::0::1::::<><>::res://scenes/jester/jester.gd<>uid://cbevwsciitskj::::res://assets/sprites/jester_idle.png<>res://scripts/sprite_render_fix.gd<>uid://cqpjtksmspmd1::::res://assets/sprites/jester_run.png<>uid://clk0i0phamxau::::res://assets/sounds/fast-simple-chop-5-6270.mp3<>uid://givejdsgi2fx::::res://assets/sounds/295559-JACKET_THROWN_ON_BED.wav<>uid://c7x3y8tgckg5u::::res://assets/sounds/273663-Ninja-Jump-2.wav<>uid://dq75dprqfpjmr::::res://assets/sounds/540278-zapsplat-bells-small-bells-costume-jester-short-movement-jingle-001-55955.wav
+::res://scenes/king/::1706457337
 king.gd::GDScript::-1::1706444051::0::1::::King<>Node2D<>::
-king.tscn::PackedScene::1497964161559133746::1706451559::0::1::::<><>::res://scenes/king/king.gd<>uid://c83cnj3xshtw0::::res://assets/sprites/king2.png<>res://scripts/sprite_render_fix.gd<>uid://dpxe8q48puals::::res://assets/sprites/king_body.png<>uid://drowd53q4gtqm::::res://assets/sprites/king_head.png<>uid://umjx2s15xuog::::res://assets/sprites/king_angry2.png<>uid://dd7pu5p8810b6::::res://assets/sprites/king_angry1.png<>uid://b3jskpsrksee2::::res://assets/sprites/king_angry3.png<>uid://dedep4hdchb67::::res://assets/sprites/king_angry4.png<>uid://d212t1jsu0vli::::res://assets/sprites/king_laugh.png<>uid://ba5qo42shdvjo::::res://assets/sounds/298894-Man_Frustrated_4.wav<>uid://dxhcp4yiesw55::::res://assets/sounds/298893-Man_Frustrated_3.wav<>uid://cbamwqcbo8rua::::res://assets/sounds/66616-Human_laughing_loud_male_old-BLASTWAVEFX-04199.wav
-::res://scenes/spectator/::1706451559
+king.tscn::PackedScene::1497964161559133746::1706457337::0::1::::<><>::res://scenes/king/king.gd<>uid://c83cnj3xshtw0::::res://assets/sprites/king2.png<>res://scripts/sprite_render_fix.gd<>uid://dpxe8q48puals::::res://assets/sprites/king_body.png<>uid://drowd53q4gtqm::::res://assets/sprites/king_head.png<>uid://umjx2s15xuog::::res://assets/sprites/king_angry2.png<>uid://dd7pu5p8810b6::::res://assets/sprites/king_angry1.png<>uid://b3jskpsrksee2::::res://assets/sprites/king_angry3.png<>uid://dedep4hdchb67::::res://assets/sprites/king_angry4.png<>uid://d212t1jsu0vli::::res://assets/sprites/king_laugh.png<>uid://ba5qo42shdvjo::::res://assets/sounds/298894-Man_Frustrated_4.wav<>uid://dxhcp4yiesw55::::res://assets/sounds/298893-Man_Frustrated_3.wav<>uid://cbamwqcbo8rua::::res://assets/sounds/66616-Human_laughing_loud_male_old-BLASTWAVEFX-04199.wav
+::res://scenes/spectator/::1706457338
 spectator.gd::GDScript::-1::1706440971::0::1::::Spectator<>Node2D<>::
-spectator.tscn::PackedScene::1558869193650185046::1706451559::0::1::::<><>::res://scenes/spectator/spectator.gd<>uid://ccom1mmbs11ek::::res://assets/sprites/spectator_green.png<>res://scripts/sprite_render_fix.gd
+spectator.tscn::PackedScene::1558869193650185046::1706457338::0::1::::<><>::res://scenes/spectator/spectator.gd<>uid://ccom1mmbs11ek::::res://assets/sprites/spectator_green.png<>res://scripts/sprite_render_fix.gd
 ::res://scripts/::1706433893
 item_resource.gd::GDScript::-1::1706432507::0::1::::ResourceItem<>Resource<>::
 sprite_render_fix.gd::GDScript::-1::1706433893::0::1::::<>Node2D<>::
-::res://shaders/::1706451604
-jester.gdshader::Shader::-1::1706451604::0::1::::<><>::
-outline.gdshader::Shader::-1::1706451604::0::1::::<><>::
-::res://test/::1706451560
-rigid_body_2d.tscn::PackedScene::5673337864624338374::1706451560::0::1::::<><>::
+::res://shaders/::1706468513
+jester.gdshader::Shader::-1::1706468513::0::1::::<><>::
+outline.gdshader::Shader::-1::1706468513::0::1::::<><>::
+::res://test/::1706457338
+rigid_body_2d.tscn::PackedScene::5673337864624338374::1706457338::0::1::::<><>::

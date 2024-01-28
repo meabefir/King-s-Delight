@@ -101,7 +101,7 @@ func _ready():
 	
 	sprite.material.set_shader_parameter("gray_hat", Color("#bdbdbd"))
 	sprite.material.set_shader_parameter("gray_body", Color("#bcbdbd"))
-	sprite.material.set_shader_parameter("white_cat", Color("#ffffff"))
+	sprite.material.set_shader_parameter("white_hat", Color("#ffffff"))
 	sprite.material.set_shader_parameter("white_body", Color("#feffff"))
 	sprite.material.set_shader_parameter("color_hat", Color.FIREBRICK)
 	sprite.material.set_shader_parameter("color_body", Color.FIREBRICK)

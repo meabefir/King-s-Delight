@@ -113,5 +113,5 @@ func _on_random_impulse_timer_timeout():
 		Events.emit_signal("amuse_king", extra_time * Globals.settings["JESTE_BALL_AMUSE_PER_SECOND"])
 		
 	# dynamic difficulty, the more you stay on, the harder it gets
-	#apply_central_impulse(Vector2((randi() % 2 * 2 - 1) * 200 * randf_range(20, 35) * (1 + trying_to_balance_for * .2), 0))
+	apply_central_impulse(Vector2((randi() % 2 * 2 - 1) * 200 * randf_range(20, 35) * (1 + trying_to_balance_for * .2), 0))
 	impulse_timer.wait_time = randf_range(.3, .8)

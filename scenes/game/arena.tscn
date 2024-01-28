@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bh0gpybg04leu"]
+[gd_scene load_steps=31 format=3 uid="uid://bh0gpybg04leu"]
 
 [ext_resource type="Script" path="res://scenes/game/arena.gd" id="1_61lbm"]
 [ext_resource type="PackedScene" uid="uid://vlvisa2orv51" path="res://scenes/king/king.tscn" id="1_b6ilj"]
@@ -497,6 +497,50 @@ size = Vector2(1086, 25.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kftlj"]
 size = Vector2(59, 319.5)
 
+[sub_resource type="Shader" id="Shader_db0a0"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform vec4 gray_hat : source_color;
+uniform vec4 gray_body : source_color;
+uniform vec4 white_hat : source_color;
+uniform vec4 white_body : source_color;
+
+uniform vec4 color_hat : source_color;
+uniform vec4 color_body : source_color;
+ 
+void fragment()
+{
+    vec4 sprite_color = texture(TEXTURE, UV);
+	if (sprite_color == gray_hat) {
+		sprite_color = color_hat - vec4(.1, .1, .1, 0);
+	}
+	
+	if (sprite_color == white_hat) {
+		sprite_color = color_hat;
+	}
+	
+	if (sprite_color == gray_body) {
+		sprite_color = color_body - vec4(.1, .1, .1, 0);
+	}
+	if (sprite_color == white_body) {
+		sprite_color = color_body;
+	}
+   
+    COLOR = sprite_color;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6kovw"]
+resource_local_to_scene = true
+shader = SubResource("Shader_db0a0")
+shader_parameter/gray_hat = Color(0.741176, 0.741176, 0.741176, 1)
+shader_parameter/gray_body = Color(0.737255, 0.741176, 0.741176, 1)
+shader_parameter/white_hat = Color(1, 1, 1, 1)
+shader_parameter/white_body = Color(0.996078, 1, 1, 1)
+shader_parameter/color_hat = Color(0.8, 0.0117647, 0.443137, 1)
+shader_parameter/color_body = Color(0, 0.462745, 0.980392, 1)
+
 [sub_resource type="Shader" id="Shader_s66qr"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
@@ -753,6 +797,9 @@ autostart = true
 
 [node name="jester" parent="." instance=ExtResource("3_5eb6f")]
 position = Vector2(308, 314)
+
+[node name="AnimatedSprite2D" parent="jester" index="1"]
+material = SubResource("ShaderMaterial_6kovw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
